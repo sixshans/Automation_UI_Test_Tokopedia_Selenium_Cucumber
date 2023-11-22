@@ -58,8 +58,7 @@ public class LaptopDetailStepDef {
     public void user_click_product() {
         // Click the product
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement ProductSection = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/div[2]/div/div[2]/div[4]/div[1]/div[6]")));
-//        WebElement ProductSection = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@data-testid='divSRPContentProducts'])[1][6]")));
+        WebElement ProductSection = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='css-54k5sq'])[1]")));
         ProductSection.click();
     }
 
@@ -71,16 +70,15 @@ public class LaptopDetailStepDef {
         Assert.assertTrue(ProductDetail.isDisplayed());
 
         // Wait before Product Label to be visible and verify
-//        WebElement ProductLabel = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[@data-testid='lblPDPDetailProductName'")));
-        WebElement ProductLabel = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[2]/div[2]/div[4]/div[1]/h1[1]")));
+        WebElement ProductLabel = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[@data-testid='lblPDPDetailProductName']")));
         Assert.assertTrue((ProductLabel.isDisplayed()));
 
     }
-    @After
-    public void Close(){
-        if(driver!= null){
-            driver.close();
-        }
-    }
+//    @After
+//    public void Close(){
+//        if(driver!= null){
+//            driver.close();
+//        }
+//    }
 
 }
