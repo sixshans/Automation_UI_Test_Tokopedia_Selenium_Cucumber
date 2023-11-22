@@ -74,11 +74,11 @@ public class LaptopDetailStepDef {
         Assert.assertTrue((ProductLabel.isDisplayed()));
 
     }
-//    @After
-//    public void Close(){
-//        if(driver!= null){
-//            driver.close();
-//        }
-//    }
+    @After
+    public void Close(){
+        if(driver!= null){
+            driver.close();
+        }
+    }
 
 }
